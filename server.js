@@ -13,6 +13,17 @@ const PORT = process.env.PORT || 8000;
 // Create express instance
 const app = express();
 
+// EJS setup
+app.use(express.static('./public'));
+app.set('view engine', 'ejs');
+
+
+// GET routes
+app.use(cors());
+app.get('/', (request, response) => {
+  response.render('./pages/index')
+});
+
 // Start server and listen for requests
 app.listen(PORT, () => {
   console.log('Server is running on PORT ' + PORT)

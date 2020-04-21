@@ -122,10 +122,10 @@ Your entire application will be deployed on Heroku.
     - Initial Repo created.
     - Initial tree/files added.
     - Installed dependencies. 
-    - lab11-feature-01 branch created.  
     - Feature 01 Complete: Initial server.js file setup serving public files.  
 * 1.0.1 20200421  
-    -  branch created.  
+    - lab-11-server-setup branch created. 
+    - added a test route to ensure index and css are working
 
 
 ## License
