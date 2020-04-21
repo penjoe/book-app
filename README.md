@@ -132,6 +132,9 @@ Your entire application will be deployed on Heroku.
     - added form for user to search books by author or title
     - add function to handle Google Books API requests
     - separated pages into home and search, added nav with links
+* 1.2.1 20200421
+    - created constructor function for book objects from search
+    - added superagent call in search handler function
 
 ## License
 

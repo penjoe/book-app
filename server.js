@@ -20,22 +20,21 @@ app.set('view engine', 'ejs');
 
 // Creates new book objects based of user input searches
 function Book(idx) {
-  this.title = idx.title;
-  this.author = idx.author;
-  this.description = idx.description;
-  this.image_url = image_url;
+  this.title = idx.volumeInfo.title;
+  this.author = idx.volumeInfo.authors;
+  this.description = idx.volumeInfo.description ? idx.volumeInfo.description: 'A book of mystery';
 }
 
 // handles Google Books API request/response
 function handleBooks(request, response, next) {
   const {bookQuery, filter} = request.body;
-  console.log('request results', bookQuery);
+  console.log('request results', request.body);
   const url = `https://www.googleapis.com/books/v1/volumes?q=+${filter}:${bookQuery}`;
 
   superagent.get(url)
     .then(bookResponse =>{
       const bookData = bookResponse.body.items;
-      console.log('res.items', bookData);
+      // console.log('res.items', bookData);
       response.status(200).send(bookData.map( idx => new Book(idx)))
     })
     .catch( error => errorHandler('Book error', request, response, next));
