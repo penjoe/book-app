@@ -89,9 +89,10 @@ Your entire application will be deployed on Heroku.
 
 ### Dependencies
 * Express  
-* dovenv  
+* dotenv  
 * superagent  
 * ejs  
+* cors
 
 
 ### Installing
@@ -102,7 +103,7 @@ Your entire application will be deployed on Heroku.
 * After cloning this file do the following:  
     - npm init -y  
     - install list of dependencies
-    - utlize your server to run the program  
+    - utilize your server to run the program  
     - node.js  / nodemon
 
 ## Help
@@ -129,7 +130,8 @@ Your entire application will be deployed on Heroku.
 * 1.2.0 20200421
     - lab-11-api-search branch created
     - added form for user to search books by author or title
-    - 
+    - add function to handle Google Books API requests
+    - separated pages into home and search, added nav with links
 
 ## License
 
@@ -156,19 +158,19 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * Feature #1 Load Time: 
     Estimate of time needed to complete: 60 mins  
-    Start time: 0800  
-    Finish time: 0900        
+    Start time: 0800 04/21/2020
+    Finish time: 0900 04/21/2020       
     Actual time needed to complete: 60 mins  
 
 * Feature #2 Search API Form: 
     Estimate of time needed to complete: 90 mins
-    Start time: 0900 
-    Finish time:
-    Actual time needed to complete: 
+    Start time: 0900 04/21/2020 
+    Finish time: 1045 04/21/2020
+    Actual time needed to complete: 105 mins
 
 * Feature #3 Browse Results: 
-    Estimate of time needed to complete:  
-    Start time:  
+    Estimate of time needed to complete: 120 mins
+    Start time: 10:45 04/21/2020
     Finish time:    
     Actual time needed to complete: 
 
