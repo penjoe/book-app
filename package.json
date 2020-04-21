@@ -1,0 +1,31 @@
+{
+  "name": "book-app",
+  "version": "1.0.0",
+  "description": "seattle301-d61 lab-11-14",
+  "main": "server.js",
+  "scripts": {
+    "test": "'hello world'",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/penjoe/book-app.git"
+  },
+  "keywords": [
+    "lab-11"
+  ],
+  "author": "Joe Pennock",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/penjoe/book-app/issues"
+  },
+  "homepage": "https://github.com/penjoe/book-app#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "pg": "^8.0.2",
+    "superagent": "^5.2.2"
+  }
+}
