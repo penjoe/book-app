@@ -123,10 +123,13 @@ Your entire application will be deployed on Heroku.
     - Initial tree/files added.
     - Installed dependencies. 
     - Feature 01 Complete: Initial server.js file setup serving public files.  
-* 1.0.1 20200421  
+* 1.1.0 20200421  
     - lab-11-server-setup branch created. 
     - added a test route to ensure index and css are working
-
+* 1.2.0 20200421
+    - lab-11-api-search branch created
+    - added form for user to search books by author or title
+    - 
 
 ## License
 
@@ -158,7 +161,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
     Actual time needed to complete: 60 mins  
 
 * Feature #2 Search API Form: 
-    Estimate of time needed to complete: 60 mins
+    Estimate of time needed to complete: 90 mins
     Start time: 0900 
     Finish time:
     Actual time needed to complete: 
