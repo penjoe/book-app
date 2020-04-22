@@ -136,7 +136,10 @@ Your entire application will be deployed on Heroku.
     - created constructor function for book objects from search
     - added superagent call in search handler function
     - created new partials for results to render on page
-    -  updated constructor to render to searches page, displaying a list of books based off of user input
+    - updated constructor to render to searches page, displaying a list of books based off of user input
+* 1.3.0 20200421
+    - lab-11-error-page branch created 
+    - added an error page that display a 404 error and location specific text whenever an error is encountered
 
 ## License
 
@@ -180,10 +183,10 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
     Actual time needed to complete: 270 mins
 
 * Feature #4 Error Messages: 
-    Estimate of time needed to complete:  
+    Estimate of time needed to complete: 60 mins
     Start time: 2100 04/21/2020
-    Finish time:    
-    Actual time needed to complete:
+    Finish time: 2130 04/21/2020
+    Actual time needed to complete: 30mins
 
 * Feature #5 Deliver CSS: 
     Estimate of time needed to complete:  

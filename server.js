@@ -48,8 +48,11 @@ function handleBooks(request, response, next) {
 
 // function to handle errors
 function errorHandler(error, request, response, next) {
-  response.status(500).send(error);
+  response.status(404)
+          .render('./pages/error', {error});
 }
+
+// function to render error page
 
 // GET routes
 app.use(cors());
