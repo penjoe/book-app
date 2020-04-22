@@ -8,7 +8,7 @@ const pg = require('pg');
 const cors = require('cors');
 
 // Server port
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 
 // Create express instance
 const app = express();

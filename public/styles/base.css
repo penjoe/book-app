@@ -1,7 +1,106 @@
 * {
-  background-color: lightskyblue
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(181, 181, 181, 1);
+  width: 320px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: black;
+  color: white;
+  margin-bottom: 20px;
+}
+
+a {
+  color: white;
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 48px;
+}
+
+h3{
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+p {
+  font-size: 18px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  margin-top: 20px;
+  text-align: center;
+}
+
+footer > h3 {
+  font-size: 30px;
+}
+
+@media all and (min-width: 321px) and (max-width: 640px) {
+  body {
+    background-color: rgba(111, 196, 202, 1);
+    width: 321px;
+    margin: 0 auto;
+  }
+}
+
+@media all and (min-width: 641px) and (max-width: 960px) {
+  body {
+    background-color: rgba(185, 105, 105, 1);
+    width: 641px;
+    margin: 0 auto;
+  }  
+}
+
+@media all and (min-width: 961px) and (max-width: 1280px) {
+  body {
+    background-color: rgba(138, 207, 106, 1);
+    width: 961px;
+    margin: 0 auto;
+  }  
+
+  p {
+    font-size: 20px;
+  }
+}
+
+@media all and (min-width: 1281px) and (max-width: 1799px) {
+  body {
+    background-color: rgba(114, 78, 160, 1);
+    width: 1281px;
+    margin: 0 auto;
+  }  
+
+  h3 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}
+
+@media all and (min-width: 1800px) {
+  body {
+    background-color: rgba(0, 133, 22, 1);
+    width: 1801px;
+    margin: 0 auto;
+  }  
+
+  h3 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 20px;
+  }
 }
