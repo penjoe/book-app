@@ -5,7 +5,7 @@ This week, you and your partner(s) will implement a basic full-stack application
 
 Today's portion of the application involves requesting books from the API. The client can submit a form to search for a book by title or author, and the search results will then be rendered as a list in the browser.
 
-Your entire application will be deployed on Heroku.
+Your entire application will be deployed on Heroku [HERE](https://jp-jz-booklist.herokuapp.com/).
 ------------------------------------------------------
 ### User Stories  
 
@@ -109,7 +109,7 @@ Your entire application will be deployed on Heroku.
 ## Help
 * n/a
 
-## Authors  
+## Authors
 - Software Developer: Joe Pennock  
     - [Official Github](https://github.com/penjoe)  
 
@@ -140,6 +140,9 @@ Your entire application will be deployed on Heroku.
 * 1.3.0 20200421
     - lab-11-error-page branch created 
     - added an error page that display a 404 error and location specific text whenever an error is encountered
+* 1.4.0 20200421
+    - created lab-11-deliver-css branch
+    - updated css, added a responsive design that changes for various viewport widths
 
 ## License
 
@@ -189,16 +192,16 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
     Actual time needed to complete: 30mins
 
 * Feature #5 Deliver CSS: 
-    Estimate of time needed to complete:  
-    Start time:  
-    Finish time:    
-    Actual time needed to complete:  
+    Estimate of time needed to complete: 150 mins
+    Start time: 2230 04/21/2020
+    Finish time: 0200
+    Actual time needed to complete: 210 mins
     
 * Feature #6 Home Page: 
-    Estimate of time needed to complete:  
-    Start time:  
-    Finish time:    
-    Actual time needed to complete:  
+    Estimate of time needed to complete: Completed during feature #3 addition
+    Start time: N/A  
+    Finish time: N/A    
+    Actual time needed to complete: N/A   
 
 #### Lab 012
 * Feature #1 Save Books: 
