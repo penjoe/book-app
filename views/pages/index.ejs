@@ -4,7 +4,10 @@
   <body>
     <%- include('../partials/header') %>
     <main>
-      <p>Hello!</p>
+      <h3>Total books in library: <%= sqlResults.rowCount %></h3>
+      <% sqlResults.rows.forEach( book => { %>
+        <%- include('../partials/book-details', {book}) %>
+      <% }); %>
     </main>
     <%- include('../partials/footer') %>
   </body>
