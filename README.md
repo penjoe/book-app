@@ -6,6 +6,8 @@ This week, you and your partner(s) will implement a basic full-stack application
 Today's portion of the application involves requesting books from the API. The client can submit a form to search for a book by title or author, and the search results will then be rendered as a list in the browser.
 
 Your entire application will be deployed on Heroku [HERE](https://jp-jz-booklist.herokuapp.com/).
+
+Project database info - see attached `book.sql` file.
 ------------------------------------------------------
 ### User Stories  
 
@@ -143,7 +145,12 @@ Your entire application will be deployed on Heroku [HERE](https://jp-jz-booklist
 * 1.4.0 20200421
     - created lab-11-deliver-css branch
     - updated css, added a responsive design that changes for various viewport widths
-
+* 2.0.0 20200422
+    - created lab-12-create-database branch
+    - refactored homepage route to display books saved in database
+    - added a total book count to display number of books in database
+    - redirect home page to search if database is empty
+    
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
@@ -205,12 +212,12 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 #### Lab 012
 * Feature #1 Save Books: 
-    Estimate of time needed to complete:  
-    Start time:  
-    Finish time:    
-    Actual time needed to complete:  
+    Estimate of time needed to complete: 150 mins
+    Start time: 0900 04/22/2020
+    Finish time: 1300 04/22/2020
+    Actual time needed to complete: 240 mins 
 * Feature #2 Single Book: 
-    Estimate of time needed to complete:  
+    Estimate of time needed to complete: 180 mins
     Start time:  
     Finish time:    
     Actual time needed to complete:  
