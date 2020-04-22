@@ -1,15 +1,20 @@
-<article>
+<article class="book-shelf">
+  <div class="book-sleeve">
+    <img src="<%= book.image_url %>" class="book-image">
+  </div>
+  <div class="book-info">
+    <h3>Title: <%= book.title %></h3>
 
-  <img src="<%= book.image_url %>">
+    <h3>Author: <%= book.author %></h3>
 
-  <h3><%= book.title %></h3>
+    <div class="book-description">
+      <h4>Synopsis:</h4>
+      <p><%= book.description %></p>
+    </div>
 
-  <h3><%= book.author %></h3>
+    <p>ISBN Number: <%= book.isbn %></p>
 
-  <p><%= book.description %></p>
+    <p>Bookshelf: <%= book.category %></p>
 
-  <p>ISBN Number: <%= book.isbn %>  </p>
-
-  <p>Bookshelf: <%= book.category %></p>
-
+  </div>
 </article>                

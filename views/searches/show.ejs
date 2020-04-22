@@ -3,7 +3,7 @@
   <%- include('../partials/head') %>
   <body>
     <%- include('../partials/header') %>
-    <main>
+    <main id="book-container">
       <% bookResults.forEach( book => { %>
         <%- include('../partials/book-details', {book}) %>
       <% }); %>
