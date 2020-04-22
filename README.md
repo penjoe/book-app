@@ -135,6 +135,8 @@ Your entire application will be deployed on Heroku.
 * 1.2.1 20200421
     - created constructor function for book objects from search
     - added superagent call in search handler function
+    - created new partials for results to render on page
+    -  updated constructor to render to searches page, displaying a list of books based off of user input
 
 ## License
 
@@ -174,12 +176,12 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Feature #3 Browse Results: 
     Estimate of time needed to complete: 120 mins
     Start time: 10:45 04/21/2020
-    Finish time:    
-    Actual time needed to complete: 
+    Finish time: 2037 04/21/2020  
+    Actual time needed to complete: 270 mins
 
 * Feature #4 Error Messages: 
     Estimate of time needed to complete:  
-    Start time:  
+    Start time: 2100 04/21/2020
     Finish time:    
     Actual time needed to complete:
 
