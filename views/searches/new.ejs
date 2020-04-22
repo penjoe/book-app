@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head') %>
-<body>
-  <%- include('../partials/header') %>
-  <form action="/searches" method="POST">
-    <label>
-      Search By Title
-      <input type="radio" name="filter" value="title" required>
-    </label>
-    <label>
-      Search By Author
-      <input type="radio" name="filter" value="author">
-    </label>
-      <input type="text" name="bookQuery" placeholder="enter author or title">
-    <button type="submit">Submit</button>
-  </form>
-</body>
+  <!-- having path issue for 'head' partial to work -->
+  <!-- <%- include('../partials/head') %> -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book App</title>
+    <link rel="stylesheet" type="text/css" href="../../styles/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../styles/base.css" />
+    <link rel="stylesheet" type="text/css" href="../../styles/layouts.css" />
+    <link rel="stylesheet" type="text/css" href="../../styles/modules.css" />
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <form action="/searches" method="POST">
+      <label>
+        Search By Title
+        <input type="radio" name="filter" value="title" required>
+      </label>
+      <label>
+        Search By Author
+        <input type="radio" name="filter" value="author">
+      </label>
+        <input type="text" name="bookQuery" placeholder="enter author or title">
+      <button type="submit">Submit</button>
+    </form>
+    <%- include('../partials/footer') %>
+  </body>
 </html>

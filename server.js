@@ -13,6 +13,18 @@ const PORT = process.env.PORT || 3000;
 // Create express instance
 const app = express();
 
+// Create database instance
+const dbClient = new pg.Client(process.env.DATABASE_URL);
+
+// Test database connection
+dbClient.connect(error => {
+  if (error) {
+    console.error('Connect to database: Failed', error.stack)
+  } else {
+    console.log('Connect to database: Success')
+  }
+})
+
 // EJS setup
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('./public'));
@@ -28,16 +40,34 @@ function Book(idx) {
   this.category = idx.volumeInfo.categories ? idx.volumeInfo.categories[0] : 'This is a book'
 }
 
+// Render data from database
+function renderDatabase(request, response, next) {
+  let matchSQL = `SELECT * FROM books;`;
+
+  dbClient.query(matchSQL)
+    .then( sqlResults => {
+      if (sqlResults.rowCount === 0) {
+        response.render('searches/new')
+      } else {
+        response.render('pages/index', {sqlResults});
+      }
+    })
+    .catch( error => errorHandler('Database book error', request, response, next));
+}
+
+//call dbClient to bring back all SQL results
+// like calling the API
+// convert array into constructed books
+// display on ejs partials 
+
 // handles Google Books API request/response
 function handleBooks(request, response, next) {
   const {bookQuery, filter} = request.body;
-  console.log('request results', request.body);
   const url = `https://www.googleapis.com/books/v1/volumes?q=+${filter}:${bookQuery}`;
 
   superagent.get(url)
     .then(bookResponse =>{
       const bookData = bookResponse.body.items;
-      console.log(bookData)
       return bookData.map( idx => new Book(idx))
     })
     .then(bookResults => {
@@ -48,17 +78,13 @@ function handleBooks(request, response, next) {
 
 // function to handle errors
 function errorHandler(error, request, response, next) {
-  response.status(404)
+  response/*.status(404)*/
           .render('./pages/error', {error});
 }
 
-// function to render error page
-
 // GET routes
 app.use(cors());
-app.get('/', (request, response) => {
-  response.render('./pages/index');
-});
+app.get('/', renderDatabase);
 app.get('/searches/new', (request, response) => {
   response.render('./searches/new');
 });
