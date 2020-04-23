@@ -155,7 +155,13 @@ Project database info - see attached `book.sql` file.
     - added feature to allow user to view details of each book in a new view
     - refactored index to only show minimal info and a button for details
     - grabbed books by book id from sql database to render details
-* 2.2.0
+* 2.2.0 20200422
+    - created lab-12-save-books branch
+    - added ability for user to save a book from the API search into their collection
+    - once user selects book to save, they are they are redirected to a single view of book details
+    - separate partials for each primary view page
+    - all routes are handled with callbacks
+    - utilized modular, mobile-first css
     
 ## License
 
@@ -227,16 +233,16 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
     Start time: 1830 04/22/2020
     Finish time: 2245 04/22/2020 
     Actual time needed to complete: 255 mins 
-* Feature #3 Add New Book: 
-    Estimate of time needed to complete:  
+* Feature #3 Add New Book:
+    Estimate of time needed to complete: 120 mins
     Start time: 2300 04/22/2020
-    Finish time: 
-    Actual time needed to complete:  
+    Finish time: 0115 04/23/2020
+    Actual time needed to complete: 135 mins
 * Feature #4/5 Consist Design: 
-    Estimate of time needed to complete:  
-    Start time:  
-    Finish time:    
-    Actual time needed to complete:  
+    Estimate of time needed to complete: already completed prior
+    Start time: N/A
+    Finish time: N/A 
+    Actual time needed to complete: N/A
 
 #### Lab 013  
 * Feature #1 Update Details: 
