@@ -16,5 +16,8 @@
 
     <p>Bookshelf: <%= book.category %></p>
 
+    <form action="/books" method="POST">
+      <button type="submit" name="saveData" value="<%= book.searchIndex %>">save to collection</button>
+    </form>
   </div>
 </article>                

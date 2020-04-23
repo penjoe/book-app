@@ -32,13 +32,14 @@ app.use(express.static('./public'));
 app.set('view engine', 'ejs');
 
 // Creates new book objects based of user input searches
-function Book(idx) {
+function Book(idx, searchIndex) {
   this.title = idx.volumeInfo.title ? idx.volumeInfo.title : 'No title found';
   this.author = idx.volumeInfo.authors ? idx.volumeInfo.authors[0] : 'No author found';
   this.description = idx.volumeInfo.description ? idx.volumeInfo.description : 'Book description not found';
   this.image_url = idx.volumeInfo.imageLinks ? idx.volumeInfo.imageLinks.thumbnail : 'No image available';
   this.isbn = idx.volumeInfo.industryIdentifiers ? idx.volumeInfo.industryIdentifiers[0].identifier : 'No ISBN info available';
-  this.category = idx.volumeInfo.categories ? idx.volumeInfo.categories[0] : 'This is a book'
+  this.bookshelf = idx.volumeInfo.category ? idx.volumeInfo.category[0] : 'This is a book'
+  this.searchIndex = searchIndex;
 }
 
 // Render data from database
@@ -56,10 +57,24 @@ function renderDatabase(request, response, next) {
     .catch( error => errorHandler('Database book error', request, response, next));
 }
 
-//call dbClient to bring back all SQL results
-// like calling the API
-// convert array into constructed books
-// display on ejs partials 
+// global of array of current searches
+let bookArray = [];
+
+function saveToDatabase(request, response, next) {
+  let res = Number(request.body.saveData);
+
+  let addBook = `INSERT INTO books (title, author, description, image_url, isbn, bookshelf) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;`;
+  let addValues = [bookArray[res].title, bookArray[res].author, bookArray[res].description, bookArray[res].image_url, bookArray[res].isbn, bookArray[res].bookshelf];
+
+  dbClient.query(addBook, addValues)
+    .then( data => {
+      let book = data.rows[0];
+      response.status(200).render('pages/books/single-show', {book})
+    })
+    .catch( error => {
+      errorHandler('save to database error', request, response, next)
+    })
+}
 
 // handles Google Books API request/response
 function handleBooks(request, response, next) {
@@ -69,7 +84,8 @@ function handleBooks(request, response, next) {
   superagent.get(url)
     .then(bookResponse =>{
       const bookData = bookResponse.body.items;
-      return bookData.map( idx => new Book(idx))
+      bookArray = bookData.map( (item, idx) => new Book(item, idx))
+      return bookArray;
     })
     .then(bookResults => {
       response.status(200).render('./searches/show', {bookResults})
@@ -102,6 +118,7 @@ app.use(cors());
 app.get('/', renderDatabase);
 app.post('/searches', handleBooks);
 app.post('/books/:id', singleBook);
+app.post('/books', saveToDatabase);
 app.get('/searches/new', (request, response) => {
   response.render('./searches/new');
 });
