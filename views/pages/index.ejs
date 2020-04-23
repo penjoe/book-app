@@ -6,7 +6,7 @@
     <main>
       <h3>Total books in library: <%= sqlResults.rowCount %></h3>
       <% sqlResults.rows.forEach( book => { %>
-        <%- include('../pages/books/single-details', {book}) %>
+        <%- include('../partials/show-details', {book}) %>
       <% }); %>
     </main>
     <%- include('../partials/footer') %>
