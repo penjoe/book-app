@@ -5,6 +5,7 @@ require('dotenv').config();
 const express = require('express');
 const superagent = require('superagent');
 const pg = require('pg');
+const override = require('method-override');
 const cors = require('cors');
 
 // Server port
@@ -76,19 +77,35 @@ function handleBooks(request, response, next) {
     .catch( error => errorHandler('Book error', request, response, next));
 }
 
+// get a single book by database ID
+function singleBook(request, response, next) {
+  let bookID = request.params.id;
+  let selectQuery = `SELECT * FROM books WHERE id=$1;`;
+  let selectValues = [bookID];
+
+  dbClient.query(selectQuery, selectValues)
+    .then( data => {
+      let book = data.rows[0];
+      response.status(200).render('pages/books/single-show' , {book})
+    })
+    .catch(  error => errorHandler('Single book error', request, response, next));
+}
+
 // function to handle errors
 function errorHandler(error, request, response, next) {
   response/*.status(404)*/
           .render('./pages/error', {error});
 }
 
-// GET routes
+// GET/POST routes
 app.use(cors());
 app.get('/', renderDatabase);
+app.post('/searches', handleBooks);
+app.post('/books/:id', singleBook);
 app.get('/searches/new', (request, response) => {
   response.render('./searches/new');
 });
-app.post('/searches', handleBooks);
+
 
 // Start server and listen for requests
 app.listen(PORT, () => {
