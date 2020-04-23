@@ -150,6 +150,12 @@ Project database info - see attached `book.sql` file.
     - refactored homepage route to display books saved in database
     - added a total book count to display number of books in database
     - redirect home page to search if database is empty
+* 2.1.0 20200422
+    - created lab-12-single-book branch
+    - added feature to allow user to view details of each book in a new view
+    - refactored index to only show minimal info and a button for details
+    - grabbed books by book id from sql database to render details
+* 2.2.0
     
 ## License
 
@@ -218,13 +224,13 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
     Actual time needed to complete: 240 mins 
 * Feature #2 Single Book: 
     Estimate of time needed to complete: 180 mins
-    Start time:  
-    Finish time:    
-    Actual time needed to complete:  
+    Start time: 1830 04/22/2020
+    Finish time: 2245 04/22/2020 
+    Actual time needed to complete: 255 mins 
 * Feature #3 Add New Book: 
     Estimate of time needed to complete:  
-    Start time:  
-    Finish time:    
+    Start time: 2300 04/22/2020
+    Finish time: 
     Actual time needed to complete:  
 * Feature #4/5 Consist Design: 
     Estimate of time needed to complete:  

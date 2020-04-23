@@ -7,14 +7,18 @@
 
     <h3>Author: <%= book.author %></h3>
 
-    <div class="book-description">
+    <!-- <div class="book-description">
       <h4>Synopsis:</h4>
       <p><%= book.description %></p>
     </div>
 
     <p><%= book.isbn %></p>
 
-    <p>Bookshelf: <%= book.category %></p>
+    <p>Bookshelf: <%= book.category %></p> -->
+    <form action="/books/<%= book.id %>" method="POST">
+      <button type="submit">View Details</button>
+    </form>
+
 
   </div>
-</article>                
+</article> 
