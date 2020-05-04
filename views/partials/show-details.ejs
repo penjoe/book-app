@@ -7,6 +7,12 @@
 
     <h3>Author: <%= book.author %></h3>
     <form action="/books/<%= book.id %>" method="POST">
+      <input class="toggle-update" type="hidden" name="author" value=" <%= book.author %>  ">
+      <input class="toggle-update" type="hidden" name="title" value=" <%= book.title %>  ">
+      <input class="toggle-update" type="hidden" name="isbn" value=" <%= book.isbn %>  ">
+      <input class="toggle-update" type="hidden" name="image_url" value=" <%= book.image_url %>  ">
+      <input class="toggle-update" type="hidden" name="description" value=" <%= book.description %>  ">
+      <input class="toggle-update" type="hidden" name="bookshelf" value=" <%= book.bookshelf %>  ">
       <button type="submit">Show Details</button>
     </form>
     

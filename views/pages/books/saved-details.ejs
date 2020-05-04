@@ -15,5 +15,28 @@
     <p><%= book.isbn %></p>
 
     <p>Bookshelf: <%= book.category %></p>
+
+    <button id ="show-update-form" type="button">Update details</button>
+
+    <form id="update-form" action="/books/<%= book.id %>?_method=PUT" method="POST">
+      <button type="submit">Update details</button>
+      <br>
+      <input class="show-form" type="text" name="author" value="<%= book.author %>">
+      <input class="show-form" type="text" name="title" value="<%= book.title %>">
+      <input class="show-form" type="text" name="isbn" value="<%= book.isbn %>">
+      <input class="show-form" type="text" name="image_url" value="<%= book.image_url %>">
+      <input class="show-form" type="text" name="description" value="<%= book.description %>">
+      <input class="show-form" type="text" name="bookshelf" value="<%= book.bookshelf %>">
+    </form>  
+
+    <form action="/books/<%= book.id %>?_method=DELETE" method="POST">
+      <input class="delete" type="hidden" name="author" value=" <%= book.author %>  ">
+      <input class="delete" type="hidden" name="title" value=" <%= book.title %>  ">
+      <input class="delete" type="hidden" name="isbn" value=" <%= book.isbn %>  ">
+      <input class="delete" type="hidden" name="image_url" value=" <%= book.image_url %>  ">
+      <input class="delete" type="hidden" name="description" value=" <%= book.description %>  ">
+      <input class="delete" type="hidden" name="bookshelf" value=" <%= book.bookshelf %>  ">
+      <button id="delete-button" type="submit">Delete Book</button>
+    </form>
   </div>
 </article> 
