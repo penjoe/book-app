@@ -95,6 +95,7 @@ Project database info - see attached `book.sql` file.
 * superagent  
 * ejs  
 * cors
+* method-override
 
 
 ### Installing
@@ -162,6 +163,9 @@ Project database info - see attached `book.sql` file.
     - separate partials for each primary view page
     - all routes are handled with callbacks
     - utilized modular, mobile-first css
+* 3.0.0 20200423
+    - created lab-13-update-details branch
+    - add option for user to update the details of books saved in their collection
     
 ## License
 
